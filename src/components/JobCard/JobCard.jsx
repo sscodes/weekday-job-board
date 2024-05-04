@@ -21,10 +21,10 @@ const JobCard = ({ job }) => {
             </a>
           </div>
           <div>
-            <span className='Details__Role'>{job.jobRole} Engineer</span>
+            <span className='Details__Role'>{(job.jobRole+' Engineer').toUpperCase()}</span>
           </div>
           <div>
-            <span className='Details__Location'>{job.location}</span>
+            <span className='Details__Location'>{job.location.toUpperCase()}</span>
           </div>
         </div>
       </div>
