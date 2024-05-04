@@ -1,0 +1,175 @@
+.JobCard {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  border-radius: 15px;
+  padding: 4%;
+  transition: transform .2s;
+  cursor: pointer;
+}
+
+.JobCard:hover {
+  transform: scale(1.01);
+}
+
+.JobCard__JobPostTime {
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  width: fit-content;
+  padding: 1.4%;
+  border-radius: 10px;
+}
+
+.JobCard__FirstSection {
+  display: grid;
+  grid-template-columns: 1fr 11fr;
+  gap: 0.7rem;
+}
+
+.FirstSection__Details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.Details__Title {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #8b8b8b;
+  cursor: pointer;
+}
+
+.Details__Title:hover {
+  text-decoration: underline;
+}
+
+.Details__Role {
+  font-size: 1.4rem;
+}
+
+.Details__Location {
+  font-size: 1.2rem;
+}
+
+.JobCard__SalarySection {
+  font-size: 1.4rem;
+  color: #565656;
+  font-weight: 600;
+}
+
+.JobCard__AboutCompany {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.AboutCompany__CompanyDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.CompanyDetails__AboutCompany {
+  font-size: 1.5rem;
+}
+
+.CompanyDetails__AboutUs {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.CompanyDetails__JobDetails {
+  font-size: 1.2rem;
+}
+
+.AboutCompany__FounderDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.FounderDetails__Title {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.FounderDetails__AboutFounder {
+  font-size: 1.2rem;
+}
+
+.AboutCompany__AboutRole {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.AboutRole__Title {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.AboutRole__Overview {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.AboutRole__Description {
+  font-size: 1.2rem;
+}
+
+.JobCard__MinimumExperienceSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.MinimumExperienceSection__Title {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #8b8b8b;
+}
+
+.MinimumExperienceSection__Experience {
+  font-size: 1.2rem;
+}
+
+.JobCard__ButtonSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.ButtonSection__EasyApply {
+  font-size: 1.5rem;
+  padding: 2.4%;
+  background-color: aqua;
+  border: 0;
+  border-radius: 10px;
+}
+
+.ButtonSection__UnlockReferralAsks {
+  font-size: 1.5rem;
+  padding: 2.4%;
+  border: 0;
+  border-radius: 10px;
+  background-color: rgb(73, 67, 218);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+button {
+  cursor: pointer;
+}
+
+.UnlockReferralAsks__ReferralImage {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  filter: blur(1.2px);
+  -webkit-filter: blur(1.2px);
+}
