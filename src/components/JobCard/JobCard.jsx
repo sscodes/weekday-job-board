@@ -61,6 +61,7 @@ const JobCard = ({ job }) => {
             inventore voluptates rem voluptatum!
           </div>
         </div>
+        <div className='curtain'></div>
       </div>
 
       {job.minExp && (
