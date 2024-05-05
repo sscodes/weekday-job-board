@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import JobCard from '../components/JobCard/JobCard';
+import Filters from '../components/Filters/Filters';
 
 const SearchJobs = () => {
   const [limit, setLimit] = useState(9);
@@ -39,11 +40,13 @@ const SearchJobs = () => {
   }, []);
 
   return (
-    <div className='SearchJobsSection'>
-      <div>Filters</div>
-      <div className='SearchJobsSection__JobsListing'>
-        {jobs.length > 0 &&
-          jobs.map((job) => <JobCard key={job.jdUid} job={job} />)}
+    <div id='container'>
+      <Filters />
+      <div className='SearchJobsSection'>
+        <div className='SearchJobsSection__JobsListing'>
+          {jobs.length > 0 &&
+            jobs.map((job) => <JobCard key={job.jdUid} job={job} />)}
+        </div>
       </div>
     </div>
   );

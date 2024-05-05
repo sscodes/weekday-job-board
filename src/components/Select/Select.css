@@ -1,0 +1,24 @@
+.Select__SelectBox {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  font-size: 1.2rem;
+  color: #8b8b8b;
+  border: 2px solid #8b8b8b;
+  border-radius: 15px;
+  padding: 0.7%;
+  width: fit-content;
+}
+
+.SelectBox__Cross {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+}
+
+.SelectBox__Arrow {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
