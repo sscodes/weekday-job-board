@@ -8,13 +8,28 @@ const Select = ({ title, dropDownData, multiSelect = false }) => {
   const [selectedValue, setSelectedValue] = useState([]);
   const [dropDownOpen, setDropDownOpen] = useState(false);
 
+  const selectData = (data) => {
+    if (multiSelect) {
+      setSelectedValue([...selectedValue, data]);
+    } else {
+      setSelectedValue([data]);
+    }
+    setDropDownOpen(false);
+  };
+
   return (
-    <div className={`Select ${title==='Roles' ? 'SpecialSelect' : ''}`}>
-      <div className={`${title==='Roles' ? 'SpecialSelect__SelectBox' : 'Select__SelectBox'}`}>
-        <div className='SelectBox__Title'>{title}</div>
+    <div className={`Select ${title === 'Roles' ? 'SpecialSelect' : ''}`}>
+      <div
+        className={`${
+          title === 'Roles' ? 'SpecialSelect__SelectBox' : 'Select__SelectBox'
+        }`}
+      >
+        <div className='SelectBox__Title'>
+          {selectedValue.length === 0 ? title : selectedValue[0]}
+        </div>
         {selectedValue.length > 0 && (
           <div className='SelectBox__Cross'>
-            <ClearIcon />
+            <ClearIcon onClick={() => setSelectedValue([])} />
           </div>
         )}
         <div className='SelectBox__Divider'>|</div>
@@ -30,14 +45,22 @@ const Select = ({ title, dropDownData, multiSelect = false }) => {
           {title === 'Roles'
             ? dropDownData.map((data, i) => (
                 <div className='Dropdown__RolesData'>
-                  <div className='Dropdown__RolesTitle'>{Object.keys(data)[0]}</div>
+                  <div className='Dropdown__RolesTitle'>
+                    {Object.keys(data)[0]}
+                  </div>
                   {data[Object.keys(data)[0]].map((role) => (
-                    <div key={role} className='Dropdown__Roles'>{role}</div>
+                    <div key={role} className='Dropdown__Roles'>
+                      {role}
+                    </div>
                   ))}
                 </div>
               ))
             : dropDownData.map((data, i) => (
-                <div key={i} className='Dropdown__DropDownData'>
+                <div
+                  key={i}
+                  className='Dropdown__DropDownData'
+                  onClick={() => selectData(data)}
+                >
                   {title === 'Number of Employees'
                     ? data[1]
                       ? data[0] + '-' + data[1]
