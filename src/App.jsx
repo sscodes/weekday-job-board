@@ -1,13 +1,8 @@
-import './App.css'
-import SearchJobs from './containers/SearchJobs'
+import './App.css';
+import SearchJobs from './containers/SearchJobs';
 
 function App() {
-
-  return (
-    <>
-      <SearchJobs />
-    </>
-  )
+  return <SearchJobs />;
 }
 
-export default App
+export default App;

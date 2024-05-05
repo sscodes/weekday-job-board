@@ -5,6 +5,7 @@ import Filters from '../components/Filters/Filters';
 const SearchJobs = () => {
   const [limit, setLimit] = useState(9);
   const [jobs, setJobs] = useState([]);
+  const [loading, setLoading] = useState(false);
   const [filteredJobs, setFilteredJobs] = useState([]);
   const [roles, setRoles] = useState();
   const [numberOfEmployees, setNumberOfEmployees] = useState();
@@ -27,7 +28,10 @@ const SearchJobs = () => {
       }),
     })
       .then((res) => res.json())
-      .then((data) => setJobs(data.jdList))
+      .then((data) => {
+        setJobs(data.jdList);
+        setLoading(false);
+      })
       .catch((error) => console.error(error));
 
     return () => controller.abort();
@@ -37,8 +41,10 @@ const SearchJobs = () => {
     if (
       document.documentElement.scrollTop + window.innerHeight >=
       document.documentElement.scrollHeight
-    )
+    ) {
       setLimit((e) => e + 10);
+      setLoading(true);
+    }
   };
 
   useEffect(() => {
@@ -89,6 +95,8 @@ const SearchJobs = () => {
           </div>
         )}
       </div>
+
+      {loading && <div className='Loading'>Loading...</div>}
     </div>
   );
 };
