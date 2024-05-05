@@ -3,10 +3,11 @@ import Select from '../Select/Select';
 
 const Filters = () => {
   return (
-    <div>
-      <div>
-        <Select title={'Experience'} />
-      </div>
+    <div className='Filters'>
+      <Select title={'Experience'} />
+      <Select title={'Experience'} />
+      <Select title={'Experience'} />
+      <Select title={'Experience'} />
     </div>
   );
 };

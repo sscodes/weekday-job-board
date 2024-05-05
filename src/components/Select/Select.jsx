@@ -2,8 +2,9 @@ import ClearIcon from '@mui/icons-material/Clear';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import React, { useState } from 'react';
 import './Select.css';
+import DropDown from '../HOC/DropDown/DropDown';
 
-const Select = ({ title }) => {
+const Select = ({ title, dropDownData = [1,2,3,4,5,6,7,8,9,10] }) => {
   const [selectedValue, setSelectedValue] = useState([]);
 
   return (
@@ -20,6 +21,11 @@ const Select = ({ title }) => {
           <ExpandMoreIcon />
         </div>
       </div>
+      <DropDown>
+        {dropDownData.map((data) => (
+          <div key={data} className='Dropdown__DropDownData'>{data}</div>
+        ))}
+      </DropDown>
     </div>
   );
 };
