@@ -9,14 +9,7 @@ import {
   TechStacks,
 } from '../../constants/DropDownConstants';
 
-const Filters = () => {
-  const [roles, setRoles] = useState();
-  const [numberOfEmployees, setNumberOfEmployees] = useState();
-  const [experience, setExperience] = useState();
-  const [remote, setRemote] = useState();
-  const [techStack, setTechStack] = useState();
-  const [minimumBasePaySalary, setMinimumBasePaySalary] = useState();
-
+const Filters = (props) => {
   return (
     <div className='Filters'>
       <Select
@@ -40,6 +33,8 @@ const Filters = () => {
         type='text'
         placeholder='Search Company Name'
         className='Filters__SearchFilter'
+        value={props.searchedData}
+        onChange={(e) => props.setSearchedData(e.target.value)}
       />
     </div>
   );
