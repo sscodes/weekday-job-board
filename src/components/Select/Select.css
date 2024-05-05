@@ -96,3 +96,18 @@
 .Dropdown__Roles:hover{
   background-color: rgb(160, 210, 255);
 }
+
+.Title__MultiSelect{
+  display: flex;
+  gap: 0.7rem;
+}
+
+.MultiSelect__Pill{
+  padding: 3px;
+  background-color: #cdcdcd;
+  color: black;
+  border-radius: 5px;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}

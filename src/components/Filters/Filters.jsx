@@ -22,12 +22,25 @@ const Filters = (props) => {
         dropDownData={NumberOfEmployeesConstants}
         multiSelect={true}
       />
-      <Select title={'Experience'} dropDownData={ExperienceConstants} />
-      <Select title={'Remote'} dropDownData={OfficeSettingConstants} />
-      <Select title={'Tech Stack'} dropDownData={TechStacks} />
+      <Select
+        title={'Experience'}
+        dropDownData={ExperienceConstants}
+        multiSelect={false}
+      />
+      <Select
+        title={'Remote'}
+        dropDownData={OfficeSettingConstants}
+        multiSelect={false}
+      />
+      <Select
+        title={'Tech Stack'}
+        dropDownData={TechStacks}
+        multiSelect={false}
+      />
       <Select
         title={'Minimum Base Pay Salary'}
         dropDownData={MinBaseSalaryConstants}
+        multiSelect={false}
       />
       <input
         type='text'
