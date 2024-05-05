@@ -21,10 +21,14 @@ const JobCard = ({ job }) => {
             </a>
           </div>
           <div>
-            <span className='Details__Role'>{(job.jobRole+' Engineer').toUpperCase()}</span>
+            <span className='Details__Role'>
+              {(job.jobRole + ' Engineer').toUpperCase()}
+            </span>
           </div>
           <div>
-            <span className='Details__Location'>{job.location.toUpperCase()}</span>
+            <span className='Details__Location'>
+              {job.location.toUpperCase()}
+            </span>
           </div>
         </div>
       </div>
@@ -62,6 +66,12 @@ const JobCard = ({ job }) => {
           </div>
         </div>
         <div className='curtain'></div>
+      </div>
+
+      <div className='JobCard__ViewJob'>
+        <a href={job.jdLink} target='_blank' className='ViewJob__Link'>
+          View Job
+        </a>
       </div>
 
       {job.minExp && (

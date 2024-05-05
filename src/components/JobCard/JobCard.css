@@ -6,7 +6,7 @@
     rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
   border-radius: 15px;
   padding: 4%;
-  transition: transform .2s;
+  transition: transform 0.2s;
   cursor: pointer;
 }
 
@@ -70,7 +70,7 @@
   position: relative;
 }
 
-.curtain{
+.curtain {
   position: absolute;
   background: linear-gradient(to bottom, transparent 0%, white 100%);
   display: inline-block;
@@ -99,6 +99,15 @@
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
+}
+
+.JobCard__ViewJob {
+  text-align: center;
+}
+
+.ViewJob__Link {
+  font-size: 1.2rem;
+  text-decoration: none;
 }
 
 .AboutCompany__FounderDetails {
