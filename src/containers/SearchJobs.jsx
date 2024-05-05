@@ -7,12 +7,12 @@ const SearchJobs = () => {
   const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(false);
   const [filteredJobs, setFilteredJobs] = useState([]);
-  const [roles, setRoles] = useState();
-  const [numberOfEmployees, setNumberOfEmployees] = useState();
-  const [experience, setExperience] = useState();
-  const [remote, setRemote] = useState();
-  const [techStack, setTechStack] = useState();
-  const [minimumBasePaySalary, setMinimumBasePaySalary] = useState();
+  const [roles, setRoles] = useState([]);
+  const [numberOfEmployees, setNumberOfEmployees] = useState([]);
+  const [experience, setExperience] = useState([]);
+  const [remote, setRemote] = useState([]);
+  const [techStack, setTechStack] = useState([]);
+  const [minimumBasePaySalary, setMinimumBasePaySalary] = useState([]);
   const [searchedData, setSearchedData] = useState('');
 
   useEffect(() => {
@@ -52,6 +52,34 @@ const SearchJobs = () => {
 
     return () => window.removeEventListener('scroll', handleScrolledToBottom);
   }, []);
+
+  useEffect(() => {
+    if (roles.length > 0) {
+      let tempJobs = [...jobs];
+      tempJobs = tempJobs.filter((job) =>
+        roles.includes(job.jobRole.toLowerCase())
+      );
+      setFilteredJobs(tempJobs);
+    } else setFilteredJobs([]);
+  }, [roles]);
+
+  useEffect(() => {
+    if (remote[0]?.toLowerCase() === 'remote') {
+      let tempJobs = [...jobs];
+      tempJobs = tempJobs.filter((job) => job.location === 'remote');
+      setFilteredJobs(tempJobs);
+    }
+  }, [remote]);
+
+  useEffect(() => {
+    if (minimumBasePaySalary[0]) {
+      let tempJobs = [...jobs];
+      tempJobs = tempJobs.filter(
+        (job) => job.minJdSalary >= minimumBasePaySalary
+      );
+      setFilteredJobs(tempJobs);
+    }
+  }, [minimumBasePaySalary]);
 
   useEffect(() => {
     if (searchedData.length > 0) {

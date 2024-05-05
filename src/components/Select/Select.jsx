@@ -1,13 +1,17 @@
 import ClearIcon from '@mui/icons-material/Clear';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Select.css';
 import DropDown from '../HOC/DropDown/DropDown';
 
-const Select = ({ title, dropDownData, multiSelect }) => {
+const Select = ({ title, dropDownData, multiSelect, setValue }) => {
   const [selectfield, setSelectField] = useState('');
   const [selectedValue, setSelectedValue] = useState([]);
   const [dropDownOpen, setDropDownOpen] = useState(false);
+
+  useEffect(() => {
+    setValue(selectedValue);
+  }, [selectedValue]);
 
   const selectData = (data) => {
     if (multiSelect) {
@@ -79,7 +83,7 @@ const Select = ({ title, dropDownData, multiSelect }) => {
                     <div
                       key={role}
                       className='Dropdown__Roles'
-                      onClick={() => selectRoles(Object.keys(data)[0], role)}
+                      onClick={() => selectRoles(Object.keys(data)[0], role.toLowerCase())}
                     >
                       {role}
                     </div>
