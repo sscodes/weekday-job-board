@@ -69,6 +69,8 @@ const SearchJobs = () => {
       tempJobs = tempJobs.filter((job) => job.location === 'remote');
       setFilteredJobs(tempJobs);
     }
+    else setFilteredJobs([]);
+    console.log(remote);
   }, [remote]);
 
   useEffect(() => {
@@ -79,6 +81,7 @@ const SearchJobs = () => {
       );
       setFilteredJobs(tempJobs);
     }
+    else setFilteredJobs([]);
   }, [minimumBasePaySalary]);
 
   useEffect(() => {

@@ -48,7 +48,7 @@ const Select = ({ title, dropDownData, multiSelect, setValue }) => {
           ) : multiSelect ? (
             <div className='Title__MultiSelect'>
               {selectedValue.map((value) => (
-                <div className='MultiSelect__Pill'>
+                <div key={value} className='MultiSelect__Pill'>
                   <div>{value}</div>
                   <ClearIcon onClick={() => deleteOneOption(value)} />
                 </div>
@@ -75,7 +75,7 @@ const Select = ({ title, dropDownData, multiSelect, setValue }) => {
         <DropDown>
           {title === 'Roles'
             ? dropDownData.map((data, i) => (
-                <div className='Dropdown__RolesData'>
+                <div key={i} className='Dropdown__RolesData'>
                   <div className='Dropdown__RolesTitle'>
                     {Object.keys(data)[0]}
                   </div>
