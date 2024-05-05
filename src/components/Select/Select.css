@@ -11,17 +11,27 @@
   padding: 0.7%;
 }
 
-.SpecialSelect{
-  width: 10rem;
-}
-
 .SpecialSelect__SelectBox{
   display: grid;
-  grid-template-columns: 8fr 2fr 2fr;
+  grid-template-columns: 3fr  1fr 1fr 1fr;
   align-items: center;
   font-size: 1.2rem;
   color: #8b8b8b;
   width: fit-content;
+}
+
+.SelectBox__Cross{
+  display: flex;
+  justify-content: end;
+}
+
+.SelectBox__Divider{
+  text-align: center;
+}
+
+.SelectBox__Arrow{
+  display: flex;
+  justify-content: center;
 }
 
 .Select__SelectBox {
