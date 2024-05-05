@@ -1,8 +1,27 @@
+.Filters{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
 .Select{
   position: relative;
   border: 2px solid #8b8b8b;
   border-radius: 15px;
   padding: 0.7%;
+}
+
+.SpecialSelect{
+  width: 10rem;
+}
+
+.SpecialSelect__SelectBox{
+  display: grid;
+  grid-template-columns: 8fr 2fr 2fr;
+  align-items: center;
+  font-size: 1.2rem;
+  color: #8b8b8b;
+  width: fit-content;
 }
 
 .Select__SelectBox {
@@ -40,7 +59,7 @@
   gap: 0.4rem;
   z-index: 100;
   width: 100%;
-  height: 50vh;
+  max-height: 50vh;
   overflow-y: scroll;
   padding-top: 0.4rem;
   padding-bottom: 0.4rem;
@@ -52,5 +71,28 @@
 }
 
 .Dropdown__DropDownData:hover{
+  background-color: rgb(160, 210, 255);
+}
+
+.Filters__SearchFilter{
+  border: 2px solid #8b8b8b;
+  border-radius: 15px;
+  font-size: 1.2rem;
+  padding: 0.7%;
+}
+
+.Dropdown__RolesTitle{
+  font-weight: 600;
+  color: #8b8b8b;
+  padding: 7%;
+}
+
+.Dropdown__Roles{
+  cursor: pointer;
+  padding: 7%;
+  width: 80%;
+}
+
+.Dropdown__Roles:hover{
   background-color: rgb(160, 210, 255);
 }
