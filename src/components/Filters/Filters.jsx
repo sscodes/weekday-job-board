@@ -7,7 +7,7 @@ import {
   OfficeSettingConstants,
   RolesConstants,
   TechStacks,
-} from '../Constants/DropDownConstants';
+} from '../../constants/DropDownConstants';
 
 const Filters = () => {
   const [roles, setRoles] = useState();
