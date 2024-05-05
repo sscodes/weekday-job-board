@@ -34,11 +34,9 @@ const JobCard = ({ job }) => {
       </div>
 
       <div className='JobCard__SalarySection'>
-        Estimated Salary: ₹{' '}
-        {job.minJdSalary && (
-          <span>{Math.round((job.minJdSalary * 83.31) / 10000)} - </span>
-        )}
-        <span>{Math.round((job.maxJdSalary * 83.31) / 10000)}</span> LPA ✅
+        Estimated Salary: {job.salaryCurrencyCode === 'USD' ? '$' : '₹'}
+        {job.minJdSalary && <span>{job.minJdSalary} - </span>}
+        <span>{job.maxJdSalary}</span>K ✅
       </div>
 
       <div className='JobCard__AboutCompany'>
