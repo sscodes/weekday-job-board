@@ -1,8 +1,4 @@
-# React + Vite
+### All the instructions to run the application is provided in the file [Instructions.md](https://github.com/sscodes/weekday-job-board/blob/master/Instructions.md)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+#### This application is created using React with Vite and the UI is made only using CSS. Material UI is used only for icons.
