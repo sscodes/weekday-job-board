@@ -72,16 +72,14 @@ const JobCard = ({ job }) => {
         </a>
       </div>
 
-      {job.minExp && (
-        <div className='JobCard__MinimumExperienceSection'>
-          <div className='MinimumExperienceSection__Title'>
-            Minimum Experience
-          </div>
-          <div className='MinimumExperienceSection__Experience'>
-            {job.minExp} years
-          </div>
+      <div className='JobCard__MinimumExperienceSection'>
+        <div className='MinimumExperienceSection__Title'>
+          {job.minExp ? 'Minimum Experience' : ''}
         </div>
-      )}
+        <div className='MinimumExperienceSection__Experience'>
+          {job.minExp ? `${job.minExp} years` : ''}
+        </div>
+      </div>
 
       <div className='JobCard__ButtonSection'>
         <button className='ButtonSection__EasyApply'>⚡ Easy Apply</button>

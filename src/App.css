@@ -31,7 +31,7 @@ body{
     gap: 2rem;
 }
 
-@media (max-width:1000px) {
+@media (max-width:1200px) {
     .SearchJobsSection__JobsListing{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
