@@ -14,7 +14,7 @@ const SearchJobs = () => {
   const minimumBasePaySalary = useSelector(
     (state) => state.FilterReducer.minimumBasePaySalary
   );
-  const searchedData = useSelector((state) => state.searchedData);
+  const searchedData = useSelector((state) => state.FilterReducer.searchedData);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -70,7 +70,6 @@ const SearchJobs = () => {
       tempJobs = tempJobs.filter((job) => job.location === 'remote');
       setFilteredJobs(tempJobs);
     } else setFilteredJobs([]);
-    console.log(remote);
   }, [remote]);
 
   useEffect(() => {

@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import Select from '../Select/Select';
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { setValue } from '../../actions';
 import {
   ExperienceConstants,
   MinBaseSalaryConstants,
@@ -9,10 +10,11 @@ import {
   TechStacks,
 } from '../../constants/DropDownConstants';
 import { FilterConstants } from '../../constants/StateConstants';
-import { useSelector } from 'react-redux';
+import Select from '../Select/Select';
 
 const Filters = () => {
-  const searchedData = useSelector((state) => state.searchedData);  
+  const searchedData = useSelector((state) => state.searchedData);
+  const dispatch = useDispatch();
   return (
     <div className='Filters'>
       <Select
