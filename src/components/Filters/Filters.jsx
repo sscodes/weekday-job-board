@@ -8,52 +8,59 @@ import {
   RolesConstants,
   TechStacks,
 } from '../../constants/DropDownConstants';
+import { FilterConstants } from '../../constants/StateConstants';
+import { useSelector } from 'react-redux';
 
-const Filters = (props) => {
+const Filters = () => {
+  const searchedData = useSelector((state) => state.searchedData);  
   return (
     <div className='Filters'>
       <Select
         title={'Roles'}
         dropDownData={RolesConstants}
         multiSelect={true}
-        setValue={props.setRoles}
+        type={FilterConstants.ROLES_CONSTANTS}
       />
       <Select
         title={'Number of Employees'}
         dropDownData={NumberOfEmployeesConstants}
         multiSelect={true}
-        setValue={props.setNumberOfEmployees}
+        type={FilterConstants.NUMBEROFEMPLOYEES_CONSTANTS}
       />
       <Select
         title={'Experience'}
         dropDownData={ExperienceConstants}
         multiSelect={false}
-        setValue={props.setExperience}
+        type={FilterConstants.EXPERIENCE_CONSTANTS}
       />
       <Select
         title={'Remote'}
         dropDownData={OfficeSettingConstants}
         multiSelect={false}
-        setValue={props.setRemote}
+        type={FilterConstants.JOBSETTING_CONSTANTS}
       />
       <Select
         title={'Tech Stack'}
         dropDownData={TechStacks}
         multiSelect={false}
-        setValue={props.setTechStack}
+        type={FilterConstants.TECHSTACK_CONSTANTS}
       />
       <Select
         title={'Minimum Base Pay Salary'}
         dropDownData={MinBaseSalaryConstants}
         multiSelect={false}
-        setValue={props.setMinimumBasePaySalary}
+        type={FilterConstants.MINIMUMBASEPAYSALARY_CONSTANTS}
       />
       <input
         type='text'
         placeholder='Search Company Name'
         className='Filters__SearchFilter'
-        value={props.searchedData}
-        onChange={(e) => props.setSearchedData(e.target.value)}
+        value={searchedData}
+        onChange={(e) =>
+          dispatch(
+            setValue(FilterConstants.SEARCHEDDATA_CONSTANTS, e.target.value)
+          )
+        }
       />
     </div>
   );

@@ -1,16 +1,21 @@
 import ClearIcon from '@mui/icons-material/Clear';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import React, { useEffect, useState } from 'react';
-import './Select.css';
+import { useDispatch } from 'react-redux';
+import { setValue } from '../../actions';
+import { FilterConstants } from '../../constants/StateConstants';
 import DropDown from '../HOC/DropDown/DropDown';
+import './Select.css';
 
-const Select = ({ title, dropDownData, multiSelect, setValue }) => {
+const Select = ({ title, dropDownData, multiSelect, type }) => {
   const [selectfield, setSelectField] = useState('');
   const [selectedValue, setSelectedValue] = useState([]);
   const [dropDownOpen, setDropDownOpen] = useState(false);
 
+  const dispatch = useDispatch();
+
   useEffect(() => {
-    setValue(selectedValue);
+    dispatch(setValue(type, selectedValue));
   }, [selectedValue]);
 
   const selectData = (data) => {
@@ -36,10 +41,16 @@ const Select = ({ title, dropDownData, multiSelect, setValue }) => {
   };
 
   return (
-    <div className={`Select ${title === 'Roles' ? 'SpecialSelect' : ''}`}>
+    <div
+      className={`Select ${
+        type === FilterConstants.ROLES_CONSTANTS ? 'SpecialSelect' : ''
+      }`}
+    >
       <div
         className={`${
-          title === 'Roles' ? 'SpecialSelect__SelectBox' : 'Select__SelectBox'
+          type === FilterConstants.ROLES_CONSTANTS
+            ? 'SpecialSelect__SelectBox'
+            : 'Select__SelectBox'
         }`}
       >
         <div className='SelectBox__Title'>
@@ -73,7 +84,7 @@ const Select = ({ title, dropDownData, multiSelect, setValue }) => {
       </div>
       {dropDownOpen && (
         <DropDown>
-          {title === 'Roles'
+          {type === FilterConstants.ROLES_CONSTANTS
             ? dropDownData.map((data, i) => (
                 <div key={i} className='Dropdown__RolesData'>
                   <div className='Dropdown__RolesTitle'>
@@ -83,7 +94,9 @@ const Select = ({ title, dropDownData, multiSelect, setValue }) => {
                     <div
                       key={role}
                       className='Dropdown__Roles'
-                      onClick={() => selectRoles(Object.keys(data)[0], role.toLowerCase())}
+                      onClick={() =>
+                        selectRoles(Object.keys(data)[0], role.toLowerCase())
+                      }
                     >
                       {role}
                     </div>
@@ -96,11 +109,11 @@ const Select = ({ title, dropDownData, multiSelect, setValue }) => {
                   className='Dropdown__DropDownData'
                   onClick={() => selectData(data)}
                 >
-                  {title === 'Number of Employees'
+                  {type === FilterConstants.NUMBEROFEMPLOYEES_CONSTANTS
                     ? data[1]
                       ? data[0] + '-' + data[1]
                       : data[0] + '+'
-                    : title === 'Minimum Base Pay Salary'
+                    : type === FilterConstants.MINIMUMBASEPAYSALARY_CONSTANTS
                     ? `${data}LPA`
                     : data}
                 </div>
