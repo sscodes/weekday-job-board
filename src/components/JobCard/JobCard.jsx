@@ -22,10 +22,12 @@ const JobCard = ({ job }) => {
           </div>
           <div>
             <span className='Details__Role'>
+              {/* changed job role to all uppercase for abbreviation */}
               {(job.jobRole + ' Engineer').toUpperCase()}
             </span>
           </div>
           <div>
+            {/* changed location to all uppercase for abbreviation */}
             <span className='Details__Location'>
               {job.location.toUpperCase()}
             </span>
@@ -47,22 +49,6 @@ const JobCard = ({ job }) => {
             {job.jobDetailsFromCompany}
           </div>
         </div>
-        <div className='AboutCompany__FounderDetails'>
-          <div className='FounderDetails__Title'>
-            Founder/Recruiter profiles:
-          </div>
-          <div className='FounderDetails__AboutFounder'>John Doe</div>
-        </div>
-        <div className='AboutCompany__AboutRole'>
-          <div className='AboutRole__Title'>About Role:</div>
-          <div className='AboutRole__Overview'>Overview</div>
-          <div className='AboutRole__Description'>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni error
-            tempore odio impedit, exercitationem alias fugit temporibus magnam
-            nisi, at, necessitatibus minima vitae ratione soluta! Doloremque
-            inventore voluptates rem voluptatum!
-          </div>
-        </div>
         <div className='curtain'></div>
       </div>
 
@@ -74,6 +60,7 @@ const JobCard = ({ job }) => {
 
       <div className='JobCard__MinimumExperienceSection'>
         <div className='MinimumExperienceSection__Title'>
+          {/* if minimum experience is given then show this */}
           {job.minExp ? 'Minimum Experience' : ''}
         </div>
         <div className='MinimumExperienceSection__Experience'>
@@ -84,6 +71,7 @@ const JobCard = ({ job }) => {
       <div className='JobCard__ButtonSection'>
         <button className='ButtonSection__EasyApply'>⚡ Easy Apply</button>
         <button className='ButtonSection__UnlockReferralAsks'>
+          {/* took random images from internet for this part */}
           <img
             src='https://m.media-amazon.com/images/I/51esjzGFHPL._AC_UF1000,1000_QL80_DpWeblab_.jpg'
             alt='referral_image_1'
