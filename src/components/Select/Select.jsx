@@ -60,7 +60,15 @@ const Select = ({ title, dropDownData, multiSelect, type }) => {
             <div className='Title__MultiSelect'>
               {selectedValue.map((value) => (
                 <div key={value} className='MultiSelect__Pill'>
-                  <div>{value}</div>
+                  {type === FilterConstants.NUMBEROFEMPLOYEES_CONSTANTS ? (
+                    value[1] ? (
+                      value[0] + '-' + value[1]
+                    ) : (
+                      value[0] + '+'
+                    )
+                  ) : (
+                    <div>{value}</div>
+                  )}
                   <ClearIcon onClick={() => deleteOneOption(value)} />
                 </div>
               ))}
