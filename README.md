@@ -9,6 +9,3 @@
 #### This project was started on 4th May, 2024.
 Below is the screenshot of the time details for first commit 'init' using gitlens vscode extension.
 ![First Commit Time](./TakeHomeAssignmentStartTime.png)
-
-#### Lighthouse report:
-![LightHouseReport](./LighthouseReport.png)
