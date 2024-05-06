@@ -1,59 +1,75 @@
-body{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Rubik', sans-serif;
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Rubik', sans-serif;
 }
 
-#root{
-    width: 85vw;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+#root {
+  width: 85vw;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
-#container{
-    display: flex;
-    flex-direction: column;
-    gap: 4rem;
+#container {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
 }
 
-.SearchJobsSection{
-    display: flex;
-    flex-direction: column;
-    gap: 4rem;
-    justify-content: center;
+.SearchJobsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  justify-content: center;
 }
 
-.SearchJobsSection__JobsListing{
+.SearchJobsSection__JobsListing {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+@media (max-width: 1200px) {
+  .SearchJobsSection__JobsListing {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
+  }
 }
 
-@media (max-width:1200px) {
-    .SearchJobsSection__JobsListing{
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
-    }
+@media (max-width: 700px) {
+  .SearchJobsSection__JobsListing {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
 }
 
-@media (max-width:700px) {
-    .SearchJobsSection__JobsListing{
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
+.SearchJobsSection__NoJobsFound {
+  display: flex;
+  justify-content: center;
 }
 
-.SearchJobsSection__NoJobsFound{
-    display: flex;
-    justify-content: center;
+.Loading {
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: 700;
 }
 
-.Loading{
-    text-align: center;
-    font-size: 2.4rem;
-    font-weight: 700;
+@keyframes pulse {
+  50% {
+    opacity: 0.5;
+  }
+}
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.skeleton {
+  background-color: rgb(226, 223, 223);
+  display: inline-block;
+  height: 30rem;
+  width: 30rem;
 }

@@ -104,8 +104,11 @@ const SearchJobs = () => {
           <div className='SearchJobsSection__JobsListing'>
             {filteredJobs.length > 0
               ? filteredJobs.map((job) => <JobCard key={job.jdUid} job={job} />)
-              : jobs.length > 0 &&
-                jobs.map((job) => <JobCard key={job.jdUid} job={job} />)}
+              : jobs.length > 0
+              ? jobs.map((job) => <JobCard key={job.jdUid} job={job} />)
+              : [...Array(9)].map((_, i) => (
+                  <div key={i} className='skeleton animate-pulse'></div>
+                ))}
           </div>
         )}
       </div>
